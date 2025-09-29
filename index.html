@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #ffe0eb, #ffd6f0);
+      margin: 0;
+      padding: 20px;
+      color: #4b2e5a;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff4f8;
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 { font-size: 2.5em; margin-bottom: 20px; color: #d6336c; }
+    nav { margin-bottom: 30px; }
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #fff;
+      font-weight: bold;
+      background: #d6336c;
+      padding: 10px 18px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+    nav a:hover { background: #b82b59; }
+    .counter {
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #b82b59;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Our Special Place 💖</h1>
+    <nav>
+      <a href="love.html">Things I Love</a>
+      <a href="letters.html">Joshua's Love Letters</a>
+      <a href="scrapbook.html">Our Scrapbook</a>
+    </nav>
+
+    <div class="counter" id="counter">
+      <!-- JS Counter will appear here -->
+    </div>
+  </div>
+
+  <script>
+    // Counter for time together
+    const startDate = new Date('May 3, 2025 03:00:00 GMT+1000');
+    function updateCounter() {
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const minutes = Math.floor((diff / (1000*60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      document.getElementById('counter').innerHTML = `We've been together for ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds 💕`;
+    }
+    setInterval(updateCounter, 1000);
+    updateCounter();
+  </script>
+</body>
+</html>
